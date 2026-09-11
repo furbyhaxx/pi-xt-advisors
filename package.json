@@ -1,42 +1,74 @@
 {
-  "name": "pi-omplike-advisor",
-  "version": "1.0.2",
+  "name": "pi-xt-advisors",
+  "version": "2.0.0",
   "description": "Pi extension: a persistent second model that reviews the main agent's work each turn and injects concise advice inline.",
   "license": "MIT",
-  "author": "Petr Baudis",
+  "author": "furbyhaxx (https://github.com/furbyhaxx)",
+  "contributors": [
+    "Petr Baudis"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pasky/pi-omplike-advisor.git"
+    "url": "git+https://github.com/furbyhaxx/pi-xt-advisors.git"
   },
-  "homepage": "https://github.com/pasky/pi-omplike-advisor#readme",
-  "bugs": "https://github.com/pasky/pi-omplike-advisor/issues",
+  "homepage": "https://github.com/furbyhaxx/pi-xt-advisors#readme",
+  "bugs": {
+    "url": "https://github.com/furbyhaxx/pi-xt-advisors/issues"
+  },
   "type": "module",
   "keywords": [
     "pi-package",
     "pi",
     "pi-coding-agent",
-    "extension",
+    "pi-extension",
     "advisor",
     "review"
   ],
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "files": [
-    "extensions/advisor.ts",
-    "extensions/lib/",
-    "README.md"
+    "src",
+    "docs",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE"
   ],
   "pi": {
     "extensions": [
-      "./extensions/advisor.ts"
+      "./src/index.ts"
     ]
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "check": "bun run typecheck && bun test"
+  },
+  "dependencies": {
+    "proper-lockfile": "^4.1.2"
   },
   "peerDependencies": {
     "@earendil-works/pi-agent-core": "*",
     "@earendil-works/pi-ai": "*",
-    "@earendil-works/pi-coding-agent": "^0.80.0",
+    "@earendil-works/pi-coding-agent": "*",
     "@earendil-works/pi-tui": "*",
     "typebox": "*"
   },
+  "devDependencies": {
+    "@earendil-works/pi-agent-core": "0.85.1",
+    "@earendil-works/pi-ai": "0.85.1",
+    "@earendil-works/pi-coding-agent": "0.85.1",
+    "@earendil-works/pi-tui": "0.85.1",
+    "@types/bun": "^1.3.0",
+    "@types/node": "^24.12.4",
+    "typebox": "1.3.7",
+    "typescript": "^5.9.3"
+  },
   "engines": {
-    "node": ">=18"
+    "node": ">=22.19.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
