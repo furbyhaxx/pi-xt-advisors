@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Raised the `@earendil-works/pi-*` development dependencies to 0.87.0. The advisor runtime drives a bare `Agent`, not an `AgentSession`, so 0.87's SessionManager-canonical change does not affect it and no behavior changed.
+
 ## [2.0.0] - 2026-09-11
 
 Forked as **pi-xt-advisors**. Breaking package, config, and command changes.
